@@ -1,4 +1,4 @@
-# dynamodb-lock-client
+# dynamodb-lock-client-v3
 
 _Stability: 1 - [Experimental](https://github.com/tristanls/stability-index#stability-1---experimental)_
 
@@ -6,11 +6,9 @@ _Stability: 1 - [Experimental](https://github.com/tristanls/stability-index#stab
 
 A general purpose distributed locking library with fencing tokens built for AWS DynamoDB.
 
-For AWS SDK v3 version go to: https://github.com/trilogy-group/dynamodb-lock-client-v3
-
 ## Contributors
 
-[@tristanls](https://github.com/tristanls), [@Jacob-Lynch](https://github.com/Jacob-Lynch), [@simlu](https://github.com/simlu), Lukas Siemon, [@tomyam1](https://github.com/tomyam1), [@deathgrindfreak](https://github.com/deathgrindfreak), [@jepetko](https://github.com/jepetko), [@fpronto](https://github.com/fpronto)
+[@tristanls](https://github.com/tristanls), [@Jacob-Lynch](https://github.com/Jacob-Lynch), [@simlu](https://github.com/simlu), Lukas Siemon, [@tomyam1](https://github.com/tomyam1), [@deathgrindfreak](https://github.com/deathgrindfreak), [@jepetko](https://github.com/jepetko)
 
 ## Contents
 
@@ -35,14 +33,17 @@ To run the below example, run:
 ```javascript
 "use strict";
 
-const AWS = require("aws-sdk");
+const AWS = require("@aws-sdk/client-dynamodb");
 const DynamoDBLockClient = require("../index.js");
 
-const dynamodb = new AWS.DynamoDB.DocumentClient(
-    {
-        region: "us-east-1"
-    }
-);
+const dynamodb = new AWS.DynamoDB({
+    credentials: {
+        accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+        secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY
+    },
+    region: process.env.AWS_REGION,
+    endpoint: process.env.DDB_ENDPOINT
+  })
 
 // "fail closed": if process crashes and lock is not released, lock will
 //                never be released (requires human intervention)
