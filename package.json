@@ -21,7 +21,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/stuartf/dynamodb-lock-client.git"
+    "url": "git+https://github.com/stuartf/dynamodb-lock-client.git"
   },
   "keywords": [
     "dynamodb",
