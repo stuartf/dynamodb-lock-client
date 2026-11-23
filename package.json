@@ -37,8 +37,5 @@
     "Cooper Bell <john.cooper.bell@gmail.com>",
     "Katarina Golbang"
   ],
-  "license": "MIT",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
-  }
+  "license": "MIT"
 }
