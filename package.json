@@ -1,5 +1,5 @@
 {
-  "name": "@trilogy-group/dynamodb-lock-client-v3",
+  "name": "@stuartf/dynamodb-lock-client",
   "version": "1.0.3",
   "description": "A general-purpose distributed locking library built for AWS DynamoDB V3.",
   "types": "types/index.d.ts",
@@ -21,7 +21,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/trilogy-group/dynamodb-lock-client-v3.git"
+    "url": "https://github.com/stuartf/dynamodb-lock-client.git"
   },
   "keywords": [
     "dynamodb",

@@ -1,7 +1,7 @@
-// Type definitions for dynamodb-lock-client-v3 1.0
-// TODO Move dynamodb-lock-client-v3 to central npm registry
+// Type definitions for dynamodb-lock-client 1.0
+// TODO Move dynamodb-lock-client to central npm registry
 
-declare module '@trilogy-group/dynamodb-lock-client-v3' {
+declare module '@stuartf/dynamodb-lock-client' {
 
   import { DynamoDB } from '@aws-sdk/client-dynamodb'
   import { EventEmitter } from 'events'
